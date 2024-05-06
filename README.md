@@ -10,7 +10,7 @@ Blog poświęcony rekodziełom mojej mamy na którym bedzie można się z nią s
 
 Do stworzenia tego projektu wykorzystałem:
 
-- Next.js w/TypeScript
-- TailwindCSS
-- Sanity - CMS do edycji wpisów na blogu
-- Vercel - hosting strony
+-   Next.js w/TypeScript
+-   TailwindCSS
+-   Sanity - CMS do edycji wpisów na blogu
+-   Vercel - hosting strony

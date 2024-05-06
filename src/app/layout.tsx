@@ -1,22 +1,31 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/styles/globals.css";
+import type { Metadata } from 'next'
+import { Inter, Libre_Baskerville } from 'next/font/google'
+import '@/styles/globals.css'
+import Header from '@/app/_components/header'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'], variable: '--fn-inter' })
+const libreBasker = Libre_Baskerville({
+    subsets: ['latin'],
+    weight: ['400', '700'],
+    variable: '--fn-libreBasker',
+})
 
 export const metadata: Metadata = {
-  title: "Kolorowy Świat Upominków",
-  description: "Strona poświęcona upominkom",
-};
+    title: 'Kolorowy Świat Upominków',
+    description: 'Strona poświęcona upominkom',
+}
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="pl">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+    return (
+        <html lang="pl" className={`${inter.variable} ${libreBasker.variable}`}>
+            <body>
+                <Header />
+                {children}
+            </body>
+        </html>
+    )
 }

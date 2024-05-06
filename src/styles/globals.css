@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --header-h: 3rem;
+}
+
 body {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
