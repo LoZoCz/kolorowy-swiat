@@ -31,7 +31,7 @@ const routerPath = {
 }
 
 const Header: FC = () => (
-    <header className="navbar fixed left-2 right-2 top-2 w-auto rounded-md bg-accent">
+    <header className="navbar fixed left-4 right-4 top-2 z-50 w-auto rounded-md bg-secondary text-base-100">
         <div className="navbar-start">
             <div className="dropdown">
                 <button className="btn btn-circle btn-ghost">
@@ -39,7 +39,7 @@ const Header: FC = () => (
                 </button>
                 <ul
                     tabIndex={0}
-                    className="menu dropdown-content menu-sm -left-2 z-[1] mt-4 w-52 rounded-md bg-accent p-2 shadow"
+                    className="menu dropdown-content menu-sm -left-2 z-[1] mt-4 w-52 rounded-md bg-secondary p-2 text-base-100 shadow"
                 >
                     <li>
                         <Link
@@ -88,17 +88,13 @@ const Header: FC = () => (
 const ThemeBtn: FC = () => {
     return (
         <label className="btn btn-circle btn-ghost swap swap-rotate">
-            {/* this hidden checkbox controls the state */}
             <input
                 type="checkbox"
                 className="theme-controller"
                 value="synthwave"
             />
 
-            {/* sun icon */}
             <IoSunnyOutline className="swap-off size-6 fill-current" />
-
-            {/* moon icon */}
             <IoMoonOutline className="swap-on size-6 fill-current" />
         </label>
     )

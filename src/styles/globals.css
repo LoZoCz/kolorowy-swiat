@@ -3,10 +3,25 @@
 @tailwind utilities;
 
 :root {
-    --header-h: 3rem;
+    --header-h: 5rem;
 }
 
+html,
 body {
-    background-color: black;
-    color: white;
+    @apply scroll-smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+    @apply w-3;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-base-300;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-accent hover:bg-accent/75;
 }

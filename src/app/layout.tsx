@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pl" className={`${inter.variable} ${libreBasker.variable}`}>
-            <body>
+            <body className="pt-header bg-base-200">
                 <Header />
                 {children}
             </body>
