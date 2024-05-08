@@ -1,3 +1,4 @@
+import { H1 } from '@/components/typography'
 import Link from 'next/link'
 import { FC } from 'react'
 import {
@@ -69,15 +70,12 @@ const Header: FC = () => (
             </div>
         </div>
         <div className="navbar-center">
-            <Link
-                href={routerPath.homePage.path}
-                className="btn btn-ghost hidden font-libre sm:flex sm:text-2xl md:text-4xl"
-            >
-                {routerPath.homePage.title}
+            <Link href={routerPath.homePage.path} className="btn btn-ghost">
+                <H1 classes="sm:text-2xl md:text-4xl hidden sm:flex">
+                    {routerPath.homePage.title}
+                </H1>
+                <IoHomeOutline className="flex size-6 sm:hidden" />
             </Link>
-            <button className="btn btn-circle btn-ghost flex sm:hidden">
-                <IoHomeOutline className="size-6" />
-            </button>
         </div>
         <div className="navbar-end">
             <ThemeBtn />

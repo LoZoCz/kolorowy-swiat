@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-    --header-h: 5rem;
+    --header-h: 6rem;
+    --icons-rotate: 3deg;
 }
 
 html,
@@ -24,4 +25,14 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     @apply bg-accent hover:bg-accent/75;
+}
+
+@keyframes iconsMove {
+    0%,
+    100% {
+        rotate: var(--icons-rotate);
+    }
+    50% {
+        rotate: calc(var(--icons-rotate) * -1);
+    }
 }
