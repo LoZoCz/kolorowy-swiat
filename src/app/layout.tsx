@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Libre_Baskerville } from 'next/font/google'
 import '@/styles/globals.css'
 import Header from '@/app/_components/header'
+import Footer from '@/app/_components/footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--fn-inter' })
 const libreBasker = Libre_Baskerville({
@@ -22,9 +23,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pl" className={`${inter.variable} ${libreBasker.variable}`}>
-            <body className="bg-bodyBg bg-bodyBgSize bg-base-200 pt-header">
+            <body className="bg-base-200 bg-bodyBg bg-bodyBgSize pt-header">
                 <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     )

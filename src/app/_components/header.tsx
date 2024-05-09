@@ -6,6 +6,9 @@ import {
     IoMoonOutline,
     IoSunnyOutline,
     IoHomeOutline,
+    IoMailOutline,
+    IoPersonCircleOutline,
+    IoDocumentTextOutline,
 } from 'react-icons/io5'
 
 const routerPath = {
@@ -13,26 +16,30 @@ const routerPath = {
         path: '/',
         title: 'Kolorowy Świat Upominków',
         description: 'Strona poświęcona upominkom',
+        icon: <IoHomeOutline className="flex size-8 sm:hidden" />,
     },
     aboutPage: {
         path: '/about',
-        title: 'O nas',
+        title: 'O mnie',
         description: 'Strona poświęcona upominkom',
+        icon: <IoPersonCircleOutline className="size-8" />,
     },
     contactPage: {
         path: '/contact',
         title: 'Kontakt',
         description: 'Strona poświęcona upominkom',
+        icon: <IoMailOutline className="size-8" />,
     },
     blogPage: {
         path: '/blog',
         title: 'Blog',
         description: 'Strona poświęcona upominkom',
+        icon: <IoDocumentTextOutline className="size-8" />,
     },
 }
 
 const Header: FC = () => (
-    <header className="navbar fixed left-4 right-4 top-2 z-50 w-auto rounded-md bg-secondary text-base-100">
+    <header className="navbar fixed left-0 top-0 z-50 w-full bg-secondary py-4 text-base-100">
         <div className="navbar-start">
             <div className="dropdown">
                 <button className="btn btn-circle btn-ghost">
@@ -40,30 +47,33 @@ const Header: FC = () => (
                 </button>
                 <ul
                     tabIndex={0}
-                    className="menu dropdown-content menu-sm -left-2 z-[1] mt-4 w-52 rounded-md bg-secondary p-2 text-base-100 shadow"
+                    className="menu dropdown-content menu-sm left-px z-[1] mt-6 w-64 rounded-md bg-secondary p-2 text-base-100 shadow"
                 >
                     <li>
                         <Link
-                            className="font-libre text-base md:text-lg"
+                            className="flex items-center justify-between font-libre text-base md:text-2xl"
                             href={routerPath.aboutPage.path}
                         >
                             {routerPath.aboutPage.title}
+                            {routerPath.aboutPage.icon}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            className="font-libre text-base md:text-lg"
+                            className="flex items-center justify-between font-libre text-base md:text-2xl"
                             href={routerPath.blogPage.path}
                         >
                             {routerPath.blogPage.title}
+                            {routerPath.blogPage.icon}
                         </Link>
                     </li>
                     <li>
                         <Link
-                            className="font-libre text-base md:text-lg"
+                            className="flex items-center justify-between font-libre text-base md:text-2xl"
                             href={routerPath.contactPage.path}
                         >
                             {routerPath.contactPage.title}
+                            {routerPath.contactPage.icon}
                         </Link>
                     </li>
                 </ul>
@@ -74,7 +84,7 @@ const Header: FC = () => (
                 <H1 classes="sm:text-2xl md:text-4xl hidden sm:flex">
                     {routerPath.homePage.title}
                 </H1>
-                <IoHomeOutline className="flex size-6 sm:hidden" />
+                {routerPath.homePage.icon}
             </Link>
         </div>
         <div className="navbar-end">
