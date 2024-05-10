@@ -1,6 +1,9 @@
+'use client'
+
 import { H1 } from '@/components/typography'
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
+import useOnclickOutside from 'react-cool-onclickoutside'
 import {
     IoListOutline,
     IoMoonOutline,
@@ -10,6 +13,7 @@ import {
     IoPersonCircleOutline,
     IoDocumentTextOutline,
 } from 'react-icons/io5'
+import { twMerge } from 'tailwind-merge'
 
 const routerPath = {
     homePage: {
@@ -22,36 +26,70 @@ const routerPath = {
         path: '/about',
         title: 'O mnie',
         description: 'Strona poświęcona upominkom',
-        icon: <IoPersonCircleOutline className="size-8" />,
+        icon: <IoPersonCircleOutline className="flex size-8 lg:hidden" />,
     },
     contactPage: {
         path: '/contact',
         title: 'Kontakt',
         description: 'Strona poświęcona upominkom',
-        icon: <IoMailOutline className="size-8" />,
+        icon: <IoMailOutline className="flex size-8 lg:hidden" />,
     },
     blogPage: {
         path: '/blog',
         title: 'Blog',
         description: 'Strona poświęcona upominkom',
-        icon: <IoDocumentTextOutline className="size-8" />,
+        icon: <IoDocumentTextOutline className="flex size-8 lg:hidden" />,
     },
 }
 
-const Header: FC = () => (
-    <header className="navbar fixed left-0 top-0 z-50 w-full bg-secondary py-4 text-base-100">
-        <div className="navbar-start">
-            <div className="dropdown">
-                <button className="btn btn-circle btn-ghost">
+const Header: FC = () => {
+    const [isOpen, setIsOpen] = useState(false)
+    const ref = useOnclickOutside(() => closeMenu())
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen)
+    }
+
+    const closeMenu = () => {
+        setIsOpen(false)
+    }
+
+    const isOpenStyles = isOpen
+        ? 'flex absolute top-full right-4 flex-col left-4 sm:left-2/3 mt-4 bg-secondary rounded-lg shadow-xl p-4'
+        : 'hidden'
+
+    return (
+        <header className="navbar fixed left-0 top-0 z-50 w-full justify-between bg-secondary py-4 text-base-100">
+            <div className="">
+                <Link
+                    onClick={() => closeMenu()}
+                    href={routerPath.homePage.path}
+                    className="btn btn-ghost"
+                >
+                    <H1 classes="sm:text-2xl md:text-4xl hidden sm:flex">
+                        {routerPath.homePage.title}
+                    </H1>
+                    {routerPath.homePage.icon}
+                </Link>
+            </div>
+            <nav className="">
+                <button
+                    onClick={() => toggleMenu()}
+                    className="btn btn-ghost flex lg:hidden"
+                >
                     <IoListOutline className="size-6" />
                 </button>
                 <ul
-                    tabIndex={0}
-                    className="menu dropdown-content menu-sm left-px z-[1] mt-6 w-64 rounded-md bg-secondary p-2 text-base-100 shadow"
+                    ref={ref}
+                    className={twMerge(
+                        'z-[1] hidden gap-4 text-base-100 lg:static lg:m-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:p-0 lg:shadow-none',
+                        isOpenStyles
+                    )}
                 >
                     <li>
                         <Link
-                            className="flex items-center justify-between font-libre text-base md:text-2xl"
+                            onClick={() => closeMenu()}
+                            className="btn btn-ghost flex items-center justify-between font-libre text-base font-light md:text-2xl"
                             href={routerPath.aboutPage.path}
                         >
                             {routerPath.aboutPage.title}
@@ -60,7 +98,8 @@ const Header: FC = () => (
                     </li>
                     <li>
                         <Link
-                            className="flex items-center justify-between font-libre text-base md:text-2xl"
+                            onClick={() => closeMenu()}
+                            className="btn btn-ghost flex items-center justify-between font-libre text-base font-light md:text-2xl"
                             href={routerPath.blogPage.path}
                         >
                             {routerPath.blogPage.title}
@@ -69,7 +108,8 @@ const Header: FC = () => (
                     </li>
                     <li>
                         <Link
-                            className="flex items-center justify-between font-libre text-base md:text-2xl"
+                            onClick={() => closeMenu()}
+                            className="btn btn-ghost flex items-center justify-between font-libre text-base font-light md:text-2xl"
                             href={routerPath.contactPage.path}
                         >
                             {routerPath.contactPage.title}
@@ -77,21 +117,10 @@ const Header: FC = () => (
                         </Link>
                     </li>
                 </ul>
-            </div>
-        </div>
-        <div className="navbar-center">
-            <Link href={routerPath.homePage.path} className="btn btn-ghost">
-                <H1 classes="sm:text-2xl md:text-4xl hidden sm:flex">
-                    {routerPath.homePage.title}
-                </H1>
-                {routerPath.homePage.icon}
-            </Link>
-        </div>
-        <div className="navbar-end">
-            <ThemeBtn />
-        </div>
-    </header>
-)
+            </nav>
+        </header>
+    )
+}
 
 const ThemeBtn: FC = () => {
     return (

@@ -36,7 +36,7 @@ const HeroSection: FC = () => {
                     Przejrzyj moja galerie dzieł i jeśli masz ochote coś zamówić
                     skontaktuj sie ze mną.
                 </Para>
-                <div className="flex justify-center gap-4">
+                <div className="flex max-w-screen-sm flex-wrap justify-center gap-4">
                     <Link href="/blog" className="btn btn-primary text-lg">
                         Moje prace
                     </Link>
