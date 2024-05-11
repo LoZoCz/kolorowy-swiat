@@ -1,10 +1,35 @@
+import Main from '@/components/main'
 import { H1 } from '@/components/typography'
 
 export default function Blog() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center gap-4">
-            <H1>Blog Page</H1>
-            <button className="btn btn-primary">Hello</button>
-        </main>
+        <Main classes="block">
+            <section
+                style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
+                className="pb-12"
+            >
+                <H1 classes="mx-auto my-8 text-center">About Page</H1>
+                <article className="grid-cols-blogGrid mx-auto grid max-w-screen-2xl gap-6 px-12">
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
+                </article>
+            </section>
+        </Main>
     )
 }

@@ -25,20 +25,20 @@ const HeroSection: FC = () => {
     return (
         <section
             style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
-            className="relative grid w-full grid-cols-1 grid-rows-2 place-items-center gap-6 rounded-lg px-4 lg:grid-cols-2 lg:grid-rows-1"
+            className="grid max-w-screen-2xl grid-cols-1 grid-rows-2 place-items-center gap-6 rounded-lg px-4 lg:grid-cols-2 lg:grid-rows-1"
         >
             <div className="hero-content z-20 flex-col items-start gap-6 justify-self-center p-0 lg:justify-self-end">
-                <H1 classes="max-w-3xl max-w-3xl">
+                <H1 classes="max-w-3xl max-w-3xl text-center lg:text-left">
                     Stroiki, bombki, kwiaty i wiele więcej rzeczy ktorych
                     jeszcze nie widziałeś.
                 </H1>
-                <Para classes="max-w-2xl py-4 font-semibold">
+                <Para classes="max-w-2xl py-4 font-semibold text-center lg:text-left">
                     Prezenty okolicznościowe czy też ozdoby na różne
                     uroczystości, które idealnie wpasują sie w twoje upodobania.
                     Przejrzyj moja galerie dzieł i jeśli masz ochote coś zamówić
                     skontaktuj sie ze mną.
                 </Para>
-                <div className="flex max-w-screen-sm flex-wrap gap-4">
+                <div className="flex w-full flex-wrap justify-center gap-4 lg:justify-start">
                     <Link
                         aria-label="blog link"
                         href="/blog"
@@ -49,7 +49,7 @@ const HeroSection: FC = () => {
                     <Link
                         aria-label="contact link"
                         href="/contact"
-                        className="btn btn-secondary text-lg"
+                        className="btn btn-outline btn-secondary text-lg"
                     >
                         Skontaktuj się
                     </Link>
@@ -58,7 +58,7 @@ const HeroSection: FC = () => {
             <div className="grid max-w-xl grid-cols-2 grid-rows-2 gap-4">
                 <Image
                     src="/images/stroik2.webp"
-                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    className="aspect-square w-full rounded-md object-cover opacity-85 shadow-xl"
                     alt="hero sect image"
                     width={500}
                     height={1000}
@@ -66,7 +66,7 @@ const HeroSection: FC = () => {
                 />
                 <Image
                     src="/images/stroik6.webp"
-                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    className="aspect-square w-full rounded-md object-cover opacity-85 shadow-xl"
                     alt="hero sect image"
                     width={1000}
                     height={500}
@@ -74,7 +74,7 @@ const HeroSection: FC = () => {
                 />
                 <Image
                     src="/images/stroik7.webp"
-                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    className="aspect-square w-full rounded-md object-cover opacity-85 shadow-xl"
                     alt="hero sect image"
                     width={500}
                     height={1000}
@@ -82,7 +82,7 @@ const HeroSection: FC = () => {
                 />
                 <Image
                     src="/images/stroik8.webp"
-                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    className="aspect-square w-full rounded-md object-cover opacity-85 shadow-xl"
                     alt="hero sect image"
                     width={500}
                     height={1000}
@@ -103,7 +103,7 @@ import {
 // CARDS SECTION COMPONENT
 const CardsSection: FC = () => {
     return (
-        <section className="max-w-screen-xl px-4 py-8">
+        <section className="max-w-screen-2xl px-4 py-8">
             <H2 classes="text-center mb-6">Zalety moich prac</H2>
             <div className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:items-stretch">
                 <div className="card w-full bg-base-100 shadow-xl md:w-1/2 lg:w-1/3">
@@ -160,7 +160,7 @@ import Main from '@/components/main'
 // TESTIMONIALS COMPONENT
 const TestimonialsSeciton: FC = () => {
     return (
-        <section className="mb-12 max-w-screen-xl px-4 py-16">
+        <section className="mb-12 max-w-screen-2xl px-4 py-16">
             <H2 classes="text-center mb-6">Opinie klientów</H2>
             <div className="flex flex-col gap-24 lg:flex-row">
                 <div className="relative flex gap-6 rounded-lg bg-primary/50 p-4">

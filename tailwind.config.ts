@@ -27,6 +27,14 @@ const config: Config = {
             animation: {
                 iconsAnim: 'iconsMove 1s ease-in-out infinite',
             },
+            gridTemplateColumns: {
+                blogGrid:
+                    'repeat( auto-fit, minmax(min(var(--column-size), 100%), 1fr));',
+            },
+            aspectRatio: {
+                '9/16': '9 / 16',
+                '3/4': '3 / 4',
+            },
         },
     },
     daisyui: {

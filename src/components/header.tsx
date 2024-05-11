@@ -29,18 +29,18 @@ const routerPath = [
         icon: <IoPersonCircleOutline className="flex size-8 lg:hidden" />,
     },
     {
-        path: '/contact',
-        title: 'Kontakt',
-        description: 'Forma kontaktu ze mną',
-        label: 'contact page link',
-        icon: <IoMailOutline className="flex size-8 lg:hidden" />,
-    },
-    {
         path: '/blog',
         title: 'Blog',
         description: 'Galeria moich prac',
         label: 'blog page link',
         icon: <IoDocumentTextOutline className="flex size-8 lg:hidden" />,
+    },
+    {
+        path: '/contact',
+        title: 'Kontakt',
+        description: 'Forma kontaktu ze mną',
+        label: 'contact page link',
+        icon: <IoMailOutline className="flex size-8 lg:hidden" />,
     },
 ]
 
@@ -97,7 +97,7 @@ const Header: FC = () => {
                                     onClick={() => closeMenu()}
                                     href={link.path}
                                     aria-label={link.label}
-                                    className="btn btn-ghost flex items-center justify-between font-inter text-base font-normal md:text-2xl"
+                                    className="btn btn-ghost flex items-center justify-between font-inter text-base font-normal md:text-xl"
                                 >
                                     {link.title}
                                     {link.icon}
