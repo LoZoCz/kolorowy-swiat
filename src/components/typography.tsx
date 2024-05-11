@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { twMerge } from 'tailwind-merge'
+import mergeClass from '@/utils/mergeClass'
 
 interface Props {
     children: string
@@ -9,8 +9,8 @@ interface Props {
 export const H1: FC<Props> = ({ children, classes }) => {
     return (
         <h1
-            className={twMerge(
-                'font-libre text-4xl font-bold md:text-5xl',
+            className={mergeClass(
+                'font-inter text-4xl font-bold md:text-5xl',
                 classes
             )}
         >
@@ -22,8 +22,8 @@ export const H1: FC<Props> = ({ children, classes }) => {
 export const H2: FC<Props> = ({ children, classes }) => {
     return (
         <h2
-            className={twMerge(
-                'font-libre text-3xl font-bold md:text-4xl',
+            className={mergeClass(
+                'font-inter text-3xl font-bold md:text-4xl',
                 classes
             )}
         >
@@ -34,21 +34,21 @@ export const H2: FC<Props> = ({ children, classes }) => {
 
 export const H3: FC<Props> = ({ children, classes }) => {
     return (
-        <h4
-            className={twMerge(
-                'font-libre text-2xl font-bold md:text-3xl',
+        <h3
+            className={mergeClass(
+                'font-inter text-2xl font-bold md:text-3xl',
                 classes
             )}
         >
             {children}
-        </h4>
+        </h3>
     )
 }
 
 export const H4: FC<Props> = ({ children, classes }) => {
     return (
         <h4
-            className={twMerge(
+            className={mergeClass(
                 'font-inter text-xl font-bold md:text-2xl',
                 classes
             )}
@@ -60,7 +60,7 @@ export const H4: FC<Props> = ({ children, classes }) => {
 
 export const Para: FC<Props> = ({ children, classes }) => {
     return (
-        <p className={twMerge('font-inter text-base md:text-lg', classes)}>
+        <p className={mergeClass('font-inter text-base md:text-lg', classes)}>
             {children}
         </p>
     )
@@ -68,7 +68,7 @@ export const Para: FC<Props> = ({ children, classes }) => {
 
 export const Quote: FC<Props> = ({ children, classes }) => {
     return (
-        <p className={twMerge('font-inter text-base md:text-lg', classes)}>
+        <p className={mergeClass('font-inter text-base md:text-lg', classes)}>
             {children}
         </p>
     )

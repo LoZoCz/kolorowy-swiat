@@ -14,7 +14,6 @@ const config: Config = {
             },
             fontFamily: {
                 inter: 'var(--fn-inter), sans-serif',
-                libre: 'var(--fn-libreBasker), sans-serif',
             },
             padding: {
                 header: 'var(--header-h)',
@@ -34,7 +33,7 @@ const config: Config = {
         themes: [
             {
                 light: {
-                    primary: '#ec4899',
+                    primary: '#db2777',
                     'primary-content': '#fdf2f8',
                     secondary: '#c9184a',
                     'secondary-content': '#fdf2f8',

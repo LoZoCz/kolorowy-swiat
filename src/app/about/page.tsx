@@ -1,8 +1,18 @@
+import { H1 } from '@/components/typography'
+import Main from '@/components/main'
+
 export default function About() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center gap-4">
-            <h1 className="font-libre text-xl font-semibold">About Page</h1>
-            <button className="btn btn-primary">Hello</button>
-        </main>
+        <Main>
+            <section
+                style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
+                className="grid place-items-center"
+            >
+                <H1>About Page</H1>
+                <button className="btn btn-primary">Hello</button>
+            </section>
+        </Main>
     )
 }
+
+//!! Zrob ta strone wkoncu

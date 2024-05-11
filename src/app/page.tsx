@@ -3,15 +3,17 @@
 //MAIN FILE IMPORTS
 import { FC } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 //MAIN FILE COMPONENT
 export default function Home() {
     return (
-        <main className="flex flex-col items-center justify-center gap-8 px-4">
+        <Main>
             <HeroSection />
             <CardsSection />
             <TestimonialsSeciton />
-        </main>
+            <Footer />
+        </Main>
     )
 }
 
@@ -23,85 +25,71 @@ const HeroSection: FC = () => {
     return (
         <section
             style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
-            className="relative flex w-full flex-col items-center justify-evenly gap-6 rounded-lg md:flex-row"
+            className="relative grid w-full grid-cols-1 grid-rows-2 place-items-center gap-6 rounded-lg px-4 lg:grid-cols-2 lg:grid-rows-1"
         >
-            <div className="flex-2 hero-content z-20 flex-col items-center justify-center gap-6 p-0">
-                <H1 classes="max-w-3xl max-w-3xl text-center">
+            <div className="hero-content z-20 flex-col items-start gap-6 justify-self-center p-0 lg:justify-self-end">
+                <H1 classes="max-w-3xl max-w-3xl">
                     Stroiki, bombki, kwiaty i wiele więcej rzeczy ktorych
                     jeszcze nie widziałeś.
                 </H1>
-                <Para classes="max-w-2xl py-4 font-semibold text-center">
+                <Para classes="max-w-2xl py-4 font-semibold">
                     Prezenty okolicznościowe czy też ozdoby na różne
                     uroczystości, które idealnie wpasują sie w twoje upodobania.
                     Przejrzyj moja galerie dzieł i jeśli masz ochote coś zamówić
                     skontaktuj sie ze mną.
                 </Para>
-                <div className="flex max-w-screen-sm flex-wrap justify-center gap-4">
-                    <Link href="/blog" className="btn btn-primary text-lg">
+                <div className="flex max-w-screen-sm flex-wrap gap-4">
+                    <Link
+                        aria-label="blog link"
+                        href="/blog"
+                        className="btn btn-primary text-lg"
+                    >
                         Moje prace
                     </Link>
-                    <Link href="/contact" className="btn btn-secondary text-lg">
+                    <Link
+                        aria-label="contact link"
+                        href="/contact"
+                        className="btn btn-secondary text-lg"
+                    >
                         Skontaktuj się
                     </Link>
                 </div>
             </div>
-            <Icons />
+            <div className="grid max-w-xl grid-cols-2 grid-rows-2 gap-4">
+                <Image
+                    src="/images/stroik2.webp"
+                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    alt="hero sect image"
+                    width={500}
+                    height={1000}
+                    loading="lazy"
+                />
+                <Image
+                    src="/images/stroik6.webp"
+                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    alt="hero sect image"
+                    width={1000}
+                    height={500}
+                    loading="lazy"
+                />
+                <Image
+                    src="/images/stroik7.webp"
+                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    alt="hero sect image"
+                    width={500}
+                    height={1000}
+                    loading="lazy"
+                />
+                <Image
+                    src="/images/stroik8.webp"
+                    className="aspect-square w-full rounded-md object-cover opacity-85"
+                    alt="hero sect image"
+                    width={500}
+                    height={1000}
+                    loading="lazy"
+                />
+            </div>
         </section>
-    )
-}
-
-//HERO ICONS IMPORTS
-import {
-    HiOutlineScissors,
-    HiOutlinePencil,
-    HiOutlineSparkles,
-    HiOutlineBookOpen,
-    HiOutlineCake,
-    HiOutlineDocument,
-    HiOutlineHeart,
-} from 'react-icons/hi2'
-import { PiFlowerLight } from 'react-icons/pi'
-import { m, LazyMotion, domAnimation } from 'framer-motion'
-import Image from 'next/image'
-
-// HERO ICONS COMPONENT
-const Icons: FC = () => {
-    const heroIcons = {
-        left: [
-            <HiOutlineScissors key={1} className="size-12 text-accent/40" />,
-            <HiOutlinePencil key={2} className="size-12 text-accent/40" />,
-            <HiOutlineSparkles key={3} className="size-12 text-accent/40" />,
-            <HiOutlineBookOpen key={4} className="size-12 text-accent/40" />,
-        ],
-        right: [
-            <HiOutlineCake key={5} className="size-12 text-accent/40" />,
-            <HiOutlineDocument key={6} className="size-12 text-accent/40" />,
-            <HiOutlineHeart key={8} className="size-12 text-accent/40" />,
-            <PiFlowerLight key={9} className="size-12 text-accent/40" />,
-        ],
-    }
-
-    return (
-        <>
-            {heroIcons.left.map((icon, index) => (
-                <div
-                    key={index}
-                    className="absolute left-12 z-10 hidden origin-center translate-y-8 animate-iconsAnim lg:block"
-                    style={{ top: index * 25 + '%' }}
-                >
-                    {icon}
-                </div>
-            ))}
-            {heroIcons.right.map((icon, index) => (
-                <div
-                    key={index}
-                    className="absolute right-12 z-10 hidden origin-center translate-y-8 animate-iconsAnim lg:block"
-                    style={{ top: index * 25 + '%' }}
-                >
-                    {icon}
-                </div>
-            ))}
-        </>
     )
 }
 
@@ -115,7 +103,7 @@ import {
 // CARDS SECTION COMPONENT
 const CardsSection: FC = () => {
     return (
-        <section className="max-w-screen-xl py-8">
+        <section className="max-w-screen-xl px-4 py-8">
             <H2 classes="text-center mb-6">Zalety moich prac</H2>
             <div className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:items-stretch">
                 <div className="card w-full bg-base-100 shadow-xl md:w-1/2 lg:w-1/3">
@@ -165,20 +153,21 @@ const CardsSection: FC = () => {
     )
 }
 
-// CARDS TESTIMONIALS IMPORTS
+// TESTIMONIALS IMPORTS
 import { RiDoubleQuotesR } from 'react-icons/ri'
+import Main from '@/components/main'
 
-// CARDS TESTIMONIALS COMPONENT
+// TESTIMONIALS COMPONENT
 const TestimonialsSeciton: FC = () => {
     return (
-        <section className="mb-12 max-w-screen-xl py-16">
+        <section className="mb-12 max-w-screen-xl px-4 py-16">
             <H2 classes="text-center mb-6">Opinie klientów</H2>
             <div className="flex flex-col gap-24 lg:flex-row">
                 <div className="relative flex gap-6 rounded-lg bg-primary/50 p-4">
                     <div>
                         <RiDoubleQuotesR className="mb-12 size-12" />
-                        <div className="avatar absolute -bottom-6 left-0 lg:-left-6">
-                            <div className="mask mask-squircle w-20">
+                        <div className="avatar absolute bottom-0 left-0">
+                            <div className=" w-16 rounded-md">
                                 <Image
                                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                                     alt="avatar image"
@@ -200,8 +189,8 @@ const TestimonialsSeciton: FC = () => {
                 <div className="relative flex gap-6 rounded-lg bg-primary/50 p-4">
                     <div>
                         <RiDoubleQuotesR className="mb-12 size-12" />
-                        <div className="avatar absolute -bottom-6 left-0 lg:-left-6">
-                            <div className="mask mask-squircle w-20">
+                        <div className="avatar absolute bottom-0 left-0">
+                            <div className="w-16 rounded-md">
                                 <Image
                                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                                     alt="avatar image"
@@ -222,5 +211,48 @@ const TestimonialsSeciton: FC = () => {
                 </div>
             </div>
         </section>
+    )
+}
+
+//FOOTER IMPORTS
+import { AiOutlineFacebook } from 'react-icons/ai'
+import { PiTiktokLogoLight } from 'react-icons/pi'
+
+//FOOTER COMPONENT
+const Footer: FC = () => {
+    return (
+        <footer className="footer footer-center w-full bg-secondary p-10 text-primary-content">
+            <aside>
+                <Image
+                    src="/bigLogo.svg"
+                    alt="footer logo"
+                    width={200}
+                    height={200}
+                    className="size-32"
+                    loading="lazy"
+                />
+                <p className="font-bold">Kolorowy Świat Upominków</p>
+                <p className="font-semibold">Anna Czernik</p>
+                <p>Copyright © 2024 - All right reserved</p>
+            </aside>
+            <nav>
+                <div className="grid grid-flow-col gap-4">
+                    <a
+                        href="https://www.tiktok.com/@kolorowy.wiat.upo"
+                        aria-label="facebook link"
+                        className="link link-neutral"
+                    >
+                        <PiTiktokLogoLight className="size-8" />
+                    </a>
+                    <a
+                        href="https://www.facebook.com/kolorowyswiat.upominkow"
+                        aria-label="tiktok link"
+                        className="link link-neutral"
+                    >
+                        <AiOutlineFacebook className="size-8" />
+                    </a>
+                </div>
+            </nav>
+        </footer>
     )
 }
