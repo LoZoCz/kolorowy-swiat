@@ -55,7 +55,7 @@ const HeroSection: FC = () => {
                     </Link>
                 </div>
             </div>
-            <div className="grid max-w-xl grid-cols-2 grid-rows-2 gap-4">
+            <div className="grid max-w-xl grid-cols-2 grid-rows-2 gap-4 justify-self-end">
                 <Image
                     src="/images/stroik2.webp"
                     className="aspect-square w-full rounded-md object-cover opacity-85 shadow-xl"
