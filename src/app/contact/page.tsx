@@ -1,6 +1,6 @@
 'use client'
 
-import { Input, toastNoti } from '@/components/formElements'
+import { ContactForm, toastNoti } from '@/components/formElements'
 import Main from '@/components/main'
 import { H1, Para } from '@/components/typography'
 import { ToastContainer } from 'react-toastify'
@@ -26,39 +26,7 @@ export default function Contact() {
                         robię.
                     </Para>
                 </div>
-                <form onSubmit={submitForm} className="block space-y-4">
-                    <div className="flex justify-between gap-4">
-                        <Input placeholder="Mariusz" label="Imię" type="text" />
-                        <Input
-                            placeholder="Kowalski"
-                            label="Nazwisko"
-                            type="text"
-                        />
-                    </div>
-                    <div className="flex justify-between gap-4">
-                        <Input
-                            placeholder="m.kowal12@mail.com"
-                            label="E-mail"
-                            type="email"
-                        />
-                        <Input
-                            placeholder="123456789"
-                            label="Numer telefonu"
-                            type="number"
-                            maxLength={9}
-                        />
-                    </div>
-                    <textarea
-                        className="textarea textarea-primary w-full text-base"
-                        placeholder="Wiadomość..."
-                        rows={6}
-                    ></textarea>
-                    <div className="flex w-full justify-center">
-                        <button type="submit" className="btn btn-primary">
-                            Wyśij wiadomość
-                        </button>
-                    </div>
-                </form>
+                <ContactForm formFunction={submitForm} />
                 <ToastContainer />
             </section>
         </Main>

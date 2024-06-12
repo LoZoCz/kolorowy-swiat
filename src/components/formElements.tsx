@@ -53,7 +53,7 @@ export const toastNoti: FC<ToastNotiProps> = ({ message, type }) => {
 
     return toast(message, {
         position: 'bottom-right',
-        autoClose: 20000000,
+        autoClose: 2000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -64,4 +64,61 @@ export const toastNoti: FC<ToastNotiProps> = ({ message, type }) => {
         className: toastVars[type].class,
         icon: toastVars[type].icon,
     })
+}
+
+interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
+    placeholder: string
+    classes?: string
+}
+
+export const TextArea: FC<TextAreaProps> = ({
+    placeholder,
+    classes,
+    ...props
+}) => {
+    return (
+        <textarea
+            {...props}
+            className={mergeClass(
+                'textarea textarea-primary w-full text-base',
+                classes
+            )}
+            placeholder={placeholder}
+            rows={6}
+        ></textarea>
+    )
+}
+
+interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
+    formFunction: (e: React.FormEvent<HTMLFormElement>) => void
+}
+
+export const ContactForm: FC<FormProps> = ({ formFunction, ...props }) => {
+    return (
+        <form {...props} onSubmit={formFunction} className="block space-y-4">
+            <div className="flex justify-between gap-4">
+                <Input placeholder="Mariusz" label="Imię" type="text" />
+                <Input placeholder="Kowalski" label="Nazwisko" type="text" />
+            </div>
+            <div className="flex justify-between gap-4">
+                <Input
+                    placeholder="m.kowal12@mail.com"
+                    label="E-mail"
+                    type="email"
+                />
+                <Input
+                    placeholder="123456789"
+                    label="Numer telefonu"
+                    type="number"
+                    maxLength={9}
+                />
+            </div>
+            <TextArea placeholder="wiadomość..." />
+            <div className="flex w-full justify-center">
+                <button type="submit" className="btn btn-primary">
+                    Wyśij wiadomość
+                </button>
+            </div>
+        </form>
+    )
 }

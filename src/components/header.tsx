@@ -61,7 +61,7 @@ const Header: FC = () => {
         : 'hidden'
 
     return (
-        <header className="navbar fixed left-0 top-0 z-50 w-full justify-between bg-secondary py-4 text-base-100">
+        <header className="navbar fixed left-0 top-0 z-[100] w-full justify-between bg-secondary py-4 text-base-100">
             <div className="">
                 <Link
                     onClick={() => closeMenu()}
