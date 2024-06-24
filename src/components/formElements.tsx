@@ -113,7 +113,7 @@ export const ContactForm: FC<FormProps> = ({ formFunction, ...props }) => {
                     maxLength={9}
                 />
             </div>
-            <TextArea placeholder="wiadomość..." />
+            <TextArea placeholder="Wiadomość..." />
             <div className="flex w-full justify-center">
                 <button type="submit" className="btn btn-primary">
                     Wyśij wiadomość
