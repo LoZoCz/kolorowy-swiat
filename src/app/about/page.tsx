@@ -10,7 +10,7 @@ export default function About() {
                 className="flex max-w-screen-xl flex-col items-center gap-6 px-12 lg:flex-row"
             >
                 <div className="flex flex-1 flex-col gap-4 pb-12">
-                    <H1>About Page</H1>
+                    <H1>Troche o mnie</H1>
                     <Para>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Saepe officia delectus error temporibus expedita
@@ -37,7 +37,7 @@ export default function About() {
                     <div className="mockup-phone mx-auto border-primary">
                         <div className="camera"></div>
                         <div className="display">
-                            <div className="aspect-9/16 artboard artboard-demo w-full sm:w-80">
+                            <div className="artboard artboard-demo aspect-9/16 w-full sm:w-80">
                                 <Image
                                     src="/aboutimage.webp"
                                     alt="about page image"

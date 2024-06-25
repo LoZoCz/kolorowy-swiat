@@ -25,7 +25,7 @@ const HeroSection: FC = () => {
     return (
         <section
             style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
-            className="grid max-w-screen-2xl grid-cols-1 grid-rows-2 place-items-center gap-6 rounded-lg px-4 lg:grid-cols-2 lg:grid-rows-1"
+            className="mx-auto flex max-w-screen-2xl flex-col items-center justify-between gap-6 rounded-lg px-4 pb-12 lg:flex-row"
         >
             <div className="hero-content z-20 flex-col items-start gap-6 justify-self-center p-0 lg:justify-self-end">
                 <H1 classes="max-w-3xl max-w-3xl text-center lg:text-left">
@@ -55,7 +55,7 @@ const HeroSection: FC = () => {
                     </Link>
                 </div>
             </div>
-            <div className="grid max-w-xl grid-cols-2 grid-rows-2 gap-4">
+            <div className="grid max-w-xl grid-cols-2 grid-rows-2 items-end gap-4">
                 <Image
                     src="/images/stroik2.webp"
                     className="aspect-square w-full rounded-md object-cover opacity-85 shadow-xl"
@@ -103,7 +103,7 @@ import {
 // CARDS SECTION COMPONENT
 const CardsSection: FC = () => {
     return (
-        <section className="max-w-screen-2xl px-4 py-8">
+        <section className="mx-auto max-w-screen-2xl px-4 py-8">
             <H2 classes="text-center mb-6">Zalety moich prac</H2>
             <div className="flex flex-col items-center justify-evenly gap-12 lg:flex-row lg:items-stretch">
                 <div className="card w-full bg-base-100 shadow-xl md:w-1/2 lg:w-1/3">
@@ -160,7 +160,7 @@ import Main from '@/components/main'
 // TESTIMONIALS COMPONENT
 const TestimonialsSeciton: FC = () => {
     return (
-        <section className="mb-12 max-w-screen-2xl px-4 py-16">
+        <section className="mx-auto mb-12 max-w-screen-2xl px-4 py-16">
             <H2 classes="text-center mb-6">Opinie klientów</H2>
             <div className="flex flex-col gap-24 lg:flex-row">
                 <div className="relative flex gap-6 rounded-lg bg-primary/50 p-4">
