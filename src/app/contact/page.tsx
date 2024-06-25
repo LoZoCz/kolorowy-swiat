@@ -16,17 +16,11 @@ export default function Contact() {
         <Main>
             <section
                 style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
-<<<<<<< HEAD
-                className="pt-8"
-            >
-                <H1 classes="text-center">Kontakt ze mną</H1>
-                <form action=""></form>
-=======
-                className="flex max-w-screen-2xl flex-col justify-center gap-8 pb-6 "
+                className="space-y-6 pt-8"
             >
                 <div className="space-y-4">
                     <H1 classes="text-center">Zamów rękodzieło na miarę</H1>
-                    <Para classes="text-center max-w-screen-md">
+                    <Para classes="mx-auto text-center max-w-screen-md">
                         Zamów moje swietne produkty lub skontatkuj sie ze mna
                         zadając mi pytanie odnosnie moich dził i rzeczy które
                         robię.
@@ -34,7 +28,6 @@ export default function Contact() {
                 </div>
                 <ContactForm formFunction={submitForm} />
                 <ToastContainer />
->>>>>>> f7ebf0b46fd41979d83871733891696962a83ac5
             </section>
         </Main>
     )

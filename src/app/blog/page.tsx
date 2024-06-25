@@ -8,29 +8,8 @@ export default function Blog() {
                 style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
                 className="pb-12"
             >
-<<<<<<< HEAD
                 <H1 classes="mx-auto my-8 text-center">Blog z moimi pracami</H1>
-                <article className="mx-auto grid max-w-screen-2xl grid-cols-blogGrid gap-6 px-12">
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-                    <div className="aspect-3/4 w-full rounded-md bg-primary"></div>
-=======
-                <H1 classes="mx-auto my-8 text-center">About Page</H1>
+
                 <article className="mx-auto grid max-w-screen-2xl grid-cols-blogGrid gap-6 px-12">
                     {Array(21)
                         .fill(null)
@@ -49,7 +28,6 @@ export default function Blog() {
                                 </div>
                             </div>
                         ))}
->>>>>>> f7ebf0b46fd41979d83871733891696962a83ac5
                 </article>
             </section>
         </Main>

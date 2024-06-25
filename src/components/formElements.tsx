@@ -95,7 +95,11 @@ interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
 
 export const ContactForm: FC<FormProps> = ({ formFunction, ...props }) => {
     return (
-        <form {...props} onSubmit={formFunction} className="block space-y-4">
+        <form
+            {...props}
+            onSubmit={formFunction}
+            className="mx-auto block max-w-screen-lg space-y-4"
+        >
             <div className="flex justify-between gap-4">
                 <Input placeholder="Mariusz" label="Imię" type="text" />
                 <Input placeholder="Kowalski" label="Nazwisko" type="text" />

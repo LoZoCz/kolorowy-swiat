@@ -2,11 +2,12 @@
 
 import { H1 } from '@/components/typography'
 import Link from 'next/link'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import useOnclickOutside from 'react-cool-onclickoutside'
 import mergeClass from '@/utils/mergeClass'
 import {
     IoListOutline,
+    IoCloseOutline,
     IoHomeOutline,
     IoMailOutline,
     IoPersonCircleOutline,
@@ -56,13 +57,17 @@ const Header: FC = () => {
         setIsOpen(false)
     }
 
+    useEffect(() => {
+        console.log(isOpen)
+    }, [isOpen])
+
     const isOpenStyles = isOpen
         ? 'flex absolute top-full right-4 flex-col left-4 sm:left-2/3 mt-4 bg-secondary rounded-lg shadow-xl p-4'
         : 'hidden'
 
     return (
         <header className="navbar fixed left-0 top-0 z-[100] w-full justify-between bg-secondary py-4 text-base-100">
-            <div className="">
+            <div>
                 <Link
                     onClick={() => closeMenu()}
                     href={routerPath[0].path}
@@ -75,15 +80,18 @@ const Header: FC = () => {
                     {routerPath[0].icon}
                 </Link>
             </div>
-            <nav className="">
+            <nav ref={ref} className="">
                 <button
                     onClick={() => toggleMenu()}
                     className="btn btn-ghost flex lg:hidden"
                 >
-                    <IoListOutline className="size-6" />
+                    {isOpen ? (
+                        <IoCloseOutline className="size-6" />
+                    ) : (
+                        <IoListOutline className="size-6" />
+                    )}
                 </button>
                 <ul
-                    ref={ref}
                     className={mergeClass(
                         'z-[1] hidden gap-4 text-base-100 lg:static lg:m-0 lg:flex lg:w-auto lg:flex-row lg:items-center lg:p-0 lg:shadow-none',
                         isOpenStyles

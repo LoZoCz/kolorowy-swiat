@@ -14,15 +14,10 @@ export default function About() {
         <Main>
             <section
                 style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
-                className="flex max-w-screen-xl flex-col items-center gap-12 px-12 lg:flex-row"
+                className="mx-auto flex max-w-screen-xl flex-col items-center gap-12 px-12 lg:flex-row"
             >
-<<<<<<< HEAD
                 <div className="flex flex-1 flex-col gap-4 pb-12">
                     <H1>Troche o mnie</H1>
-=======
-                <div className="flex flex-col gap-4 pb-12">
-                    <H1>About Page</H1>
->>>>>>> f7ebf0b46fd41979d83871733891696962a83ac5
                     <Para>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Saepe officia delectus error temporibus expedita
