@@ -29,7 +29,7 @@ const config: Config = {
             },
             gridTemplateColumns: {
                 blogGrid:
-                    'repeat( auto-fit, minmax(min(var(--column-size), 100%), 1fr));',
+                    'repeat(auto-fit, minmax(min(var(--column-size), 100%), 1fr));',
             },
             aspectRatio: {
                 '9/16': '9 / 16',

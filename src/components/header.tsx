@@ -2,7 +2,7 @@
 
 import { H1 } from '@/components/typography'
 import Link from 'next/link'
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import useOnclickOutside from 'react-cool-onclickoutside'
 import mergeClass from '@/utils/mergeClass'
 import {
@@ -56,10 +56,6 @@ const Header: FC = () => {
     const closeMenu = () => {
         setIsOpen(false)
     }
-
-    useEffect(() => {
-        console.log(isOpen)
-    }, [isOpen])
 
     const isOpenStyles = isOpen
         ? 'flex absolute top-full right-4 flex-col left-4 sm:left-2/3 mt-4 bg-secondary rounded-lg shadow-xl p-4'

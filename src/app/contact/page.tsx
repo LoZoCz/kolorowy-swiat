@@ -16,7 +16,7 @@ export default function Contact() {
         <Main>
             <section
                 style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
-                className="space-y-6 pt-8"
+                className="space-y-6 p-4 pt-[3vw]"
             >
                 <div className="space-y-4">
                     <H1 classes="text-center">Zamów rękodzieło na miarę</H1>

@@ -22,7 +22,7 @@ export const Input: FC<InputProps> = ({
                 {...props}
                 placeholder={placeholder}
                 className={mergeClass(
-                    'input input-bordered input-primary bg-base-100/75',
+                    'input input-bordered input-primary w-full bg-base-100/75',
                     classes
                 )}
             />
@@ -111,7 +111,7 @@ export const ContactForm: FC<FormProps> = ({ formFunction, ...props }) => {
                     type="email"
                 />
                 <Input
-                    placeholder="123456789"
+                    placeholder="+12 123-456-789"
                     label="Numer telefonu"
                     type="number"
                     maxLength={9}
