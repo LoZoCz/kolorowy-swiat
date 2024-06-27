@@ -30,10 +30,10 @@ const routerPath = [
         icon: <IoPersonCircleOutline className="flex size-8 lg:hidden" />,
     },
     {
-        path: '/blog',
-        title: 'Blog',
+        path: '/gallery',
+        title: 'Galeria',
         description: 'Galeria moich prac',
-        label: 'blog page link',
+        label: 'gallery page link',
         icon: <IoDocumentTextOutline className="flex size-8 lg:hidden" />,
     },
     {
