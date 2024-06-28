@@ -12,11 +12,11 @@ export default async function Blog() {
         <Main classes="block">
             <section
                 style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
-                className="pb-12"
+                className="px-12 pb-12"
             >
                 <H1 classes="mx-auto my-8 text-center">Galeria moich dzieł</H1>
 
-                <article className="mx-auto grid max-w-screen-2xl grid-cols-blogGrid gap-6 px-12">
+                <article className="mx-auto grid max-w-screen-2xl grid-cols-blogGrid gap-6">
                     {galleryData.map(
                         ({ name, slug, _id, thumbnail }, index) => (
                             <Link

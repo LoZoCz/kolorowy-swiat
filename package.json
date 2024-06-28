@@ -17,6 +17,7 @@
         "react-cool-onclickoutside": "^1.7.0",
         "react-dom": "^18",
         "react-icons": "^5.2.0",
+        "react-portable-text": "^0.6.0",
         "react-toastify": "^10.0.5",
         "tailwind-merge": "^2.3.0"
     },

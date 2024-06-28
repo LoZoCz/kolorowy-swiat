@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import mergeClass from '@/utils/mergeClass'
 
 interface Props {
-    children: string
+    children: string | ReactNode
     classes?: string
 }
 
@@ -68,8 +68,26 @@ export const Para: FC<Props> = ({ children, classes }) => {
 
 export const Quote: FC<Props> = ({ children, classes }) => {
     return (
-        <p className={mergeClass('font-inter text-base md:text-lg', classes)}>
+        <p
+            className={mergeClass(
+                'font-inter text-base italic md:text-lg',
+                classes
+            )}
+        >
             {children}
         </p>
+    )
+}
+
+export const ListItem: FC<Props> = ({ children, classes }) => {
+    return (
+        <li
+            className={mergeClass(
+                'list-disc font-inter text-base md:text-lg',
+                classes
+            )}
+        >
+            {children}
+        </li>
     )
 }

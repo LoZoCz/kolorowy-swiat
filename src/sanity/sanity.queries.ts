@@ -27,7 +27,8 @@ export const fetchGalleryItemData = async (param: string) => {
         throw new Error('Invalid parameter: insert query param')
     }
 
-    const galleryItemQuery = `*[ _type == "gallery" && _id == "${param}"][0]{
+    const galleryItemQuery = `
+    *[ _type == "gallery" && _id == "${param}"][0]{
       name,
       slug,
       desc,
@@ -36,8 +37,23 @@ export const fetchGalleryItemData = async (param: string) => {
       },
       'thumbnail':img {
         'url':asset->url
-        }
-      }`
+      }
+    }`
 
     return await client.fetch(galleryItemQuery)
+}
+
+// testimonial query
+
+const testimonialQuery = `
+*[_type == "opinie"]{
+  name,
+  testimonial,
+  'image':poster {
+    'url':asset->url
+  }
+}`
+
+export const fetchTestimonialsData = async () => {
+    return await client.fetch(testimonialQuery)
 }
