@@ -40,15 +40,7 @@ export interface GalleryDataTypes {
             _type: string
         }
     }
-    imgs: Array<{
-        _key: string
-        _type: string
-        asset: {
-            _ref: string
-            _type: string
-        }
-        url: string
-    }>
+    imgs: Img[]
     thumbnail: {
         url: string
     }
@@ -58,6 +50,16 @@ export interface GalleryDataTypes {
         current: string
     }
     _updatedAt: string
+}
+
+export interface Img {
+    _key: string
+    _type: string
+    asset: {
+        _ref: string
+        _type: string
+    }
+    url: string
 }
 
 // Testimonial sanity data types

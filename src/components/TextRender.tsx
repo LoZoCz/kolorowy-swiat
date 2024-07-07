@@ -13,8 +13,12 @@ interface ChildrenTypes {
 }
 
 const blockElementsStyle = {
-    normal: ({ children }: ChildrenTypes) => <Para>{children}</Para>,
-    li: ({ children }: ChildrenTypes) => <ListItem>{children}</ListItem>,
+    normal: ({ children }: ChildrenTypes) => (
+        <Para classes="text-sm md:text-base">{children}</Para>
+    ),
+    li: ({ children }: ChildrenTypes) => (
+        <ListItem classes="text-sm md:text-base">{children}</ListItem>
+    ),
     ul: ({ children }: ChildrenTypes) => <ul className="pl-6">{children}</ul>,
 }
 
