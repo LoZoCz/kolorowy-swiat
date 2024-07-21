@@ -11,7 +11,7 @@ const HeroSection: FC = () => {
         >
             <div className="hero-content z-20 flex-col items-start gap-6 justify-self-center p-0 lg:justify-self-end">
                 <H1 classes="max-w-3xl max-w-3xl text-center lg:text-left">
-                    Stroiki, bombki, kwiaty i wiele więcej rzeczy ktorych
+                    Stroiki, bombki, kwiaty i wiele więcej rzeczy których
                     jeszcze nie widziałeś.
                 </H1>
                 <Para classes="max-w-2xl py-4 font-semibold text-center lg:text-left">

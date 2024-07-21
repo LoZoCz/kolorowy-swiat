@@ -51,6 +51,7 @@ const ImageCarousel: FC<Props> = ({ images }) => {
                 alt="nice image"
                 width={600}
                 height={400}
+                priority
                 className="aspect-square h-full w-full flex-1 rounded-md object-cover"
             />
             <button
@@ -70,5 +71,3 @@ const ImageCarousel: FC<Props> = ({ images }) => {
 }
 
 export default ImageCarousel
-
-// zrob podglad zdjecia na caly ekran

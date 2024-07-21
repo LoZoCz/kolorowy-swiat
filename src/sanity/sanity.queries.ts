@@ -3,7 +3,7 @@ import client from './sanity.client'
 // gallery query
 
 const galleryQuery = `
-*[ _type == "gallery"]{
+*[_type == "gallery"]{
   _id,
   name,
   slug,
@@ -28,7 +28,7 @@ export const fetchGalleryItemData = async (param: string) => {
     }
 
     const galleryItemQuery = `
-    *[ _type == "gallery" && _id == "${param}"][0]{
+    *[_type == "gallery" && _id == "${param}"][0]{
       name,
       slug,
       desc,

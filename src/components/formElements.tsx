@@ -33,6 +33,9 @@ export const Input: FC<InputProps> = ({
 import { IoCheckmarkOutline } from 'react-icons/io5'
 import { FaRegCircleXmark } from 'react-icons/fa6'
 import { Slide, toast } from 'react-toastify'
+import { PiTiktokLogoLight } from 'react-icons/pi'
+import { AiOutlineFacebook } from 'react-icons/ai'
+import { Para } from './typography'
 
 interface ToastNotiProps {
     message: string
@@ -98,30 +101,65 @@ export const ContactForm: FC<FormProps> = ({ formFunction, ...props }) => {
         <form
             {...props}
             onSubmit={formFunction}
-            className="mx-auto block max-w-screen-lg space-y-4"
+            className="relative mx-auto block max-w-screen-lg space-y-4"
         >
             <div className="flex justify-between gap-4">
-                <Input placeholder="Mariusz" label="Imię" type="text" />
-                <Input placeholder="Kowalski" label="Nazwisko" type="text" />
+                <Input
+                    placeholder="Mariusz"
+                    label="Imię"
+                    type="text"
+                    disabled
+                />
+                <Input
+                    placeholder="Kowalski"
+                    label="Nazwisko"
+                    type="text"
+                    disabled
+                />
             </div>
             <div className="flex justify-between gap-4">
                 <Input
                     placeholder="m.kowal12@mail.com"
                     label="E-mail"
                     type="email"
+                    disabled
                 />
                 <Input
                     placeholder="+12 123-456-789"
                     label="Numer telefonu"
                     type="number"
                     maxLength={9}
+                    disabled
                 />
             </div>
-            <TextArea placeholder="Wiadomość..." />
+            <TextArea disabled placeholder="Wiadomość..." />
             <div className="flex w-full justify-center">
-                <button type="submit" className="btn btn-primary">
+                <button disabled type="submit" className="btn btn-primary">
                     Wyśij wiadomość
                 </button>
+            </div>
+            <div className="absolute left-1/2 top-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-8 rounded-md bg-primary p-4 text-base-100">
+                <Para>Kontakt akutalnie jest możliwy tylko poprzez maila:</Para>
+                <a className="text-2xl" href="mailto:anna202020@interia.pl">
+                    anna202020@interia.pl
+                </a>
+                <Para>lub poprzez media społecznościowe</Para>
+                <div className="flex gap-4">
+                    <a
+                        href="https://www.tiktok.com/@kolorowy.wiat.upo"
+                        aria-label="facebook link"
+                        className="link link-neutral"
+                    >
+                        <PiTiktokLogoLight className="size-8" />
+                    </a>
+                    <a
+                        href="https://www.facebook.com/kolorowyswiat.upominkow"
+                        aria-label="tiktok link"
+                        className="link link-neutral"
+                    >
+                        <AiOutlineFacebook className="size-8" />
+                    </a>
+                </div>
             </div>
         </form>
     )

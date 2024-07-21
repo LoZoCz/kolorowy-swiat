@@ -18,10 +18,9 @@ const CardsSection: FC = () => {
                     <div className="card-body items-center text-center">
                         <H4 classes="card-title gap-4">Wysoka jakość</H4>
                         <Para>
-                            Najwyższej jakości rękodzieła stworzone z dbałością
-                            o każdy detal. Korzystamy wyłącznie z najlepszych
-                            materiałów, zapewniając niezrównaną trwałość i
-                            estetykę.
+                            Rękodzieła stworzone z dbałością o każdy detal.
+                            Korzystam wyłącznie z najlepszych materiałów,
+                            zapewniając niezrównaną trwałość i estetykę.
                         </Para>
                     </div>
                 </div>
@@ -32,7 +31,7 @@ const CardsSection: FC = () => {
                     <div className="card-body items-center text-center">
                         <H4 classes="card-title gap-4">Przystępna cena</H4>
                         <Para>
-                            Doskonałe produkty nie muszą być drogie. Oferujemy
+                            Doskonałe produkty nie muszą być drogie. Oferuje
                             perfekcyjną równowagę między jakością a ceną,
                             zapewniając najbardziej atrakcyjne oferty dostępne
                             na rynku.

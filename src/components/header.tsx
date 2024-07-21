@@ -22,13 +22,13 @@ const routerPath = [
         label: 'Kolorowy',
         icon: <IoHomeOutline className="flex size-8 sm:hidden" />,
     },
-    {
-        path: '/about',
-        title: 'O mnie',
-        description: 'Troche o mnie',
-        label: 'about page link',
-        icon: <IoPersonCircleOutline className="flex size-8 lg:hidden" />,
-    },
+    // {
+    //     path: '/about',
+    //     title: 'O mnie',
+    //     description: 'Troche o mnie',
+    //     label: 'about page link',
+    //     icon: <IoPersonCircleOutline className="flex size-8 lg:hidden" />,
+    // },
     {
         path: '/gallery',
         title: 'Galeria',
